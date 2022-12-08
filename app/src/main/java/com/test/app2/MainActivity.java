@@ -3,6 +3,8 @@ package com.test.app2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.VideoView;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,9 +26,20 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         setContentView(R.layout.activity_main);
 
-        ImageView backgroundImageView1 = (ImageView) findViewById(R.id.imageView);
-        backgroundImageView1.setImageURI(Uri.parse("/mnt/sdcard/Documents/Museum/Page1.png"));
+//        ImageView backgroundImageView1 = (ImageView) findViewById(R.id.imageView);
+//        backgroundImageView1.setImageURI(Uri.parse("/storage/emulated/0/Pictures/gg.jpg"));
 
+        File imgFile = new  File("/storage/emulated/0/Pictures/gg.jpg");
+
+        if(imgFile.exists()){
+
+            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+
+            ImageView backgroundImageView1 = (ImageView) findViewById(R.id.imageView);
+
+            backgroundImageView1.setImageBitmap(myBitmap);
+
+        }
 
 //        VideoView simpleVideoView1 = (VideoView) findViewById(R.id.videoView1);
 //        simpleVideoView1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
