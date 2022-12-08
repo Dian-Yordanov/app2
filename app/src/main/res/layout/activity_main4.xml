@@ -17,8 +17,15 @@
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="450dp"
-        android:layout_height="236dp"
-        tools:layout_editor_absoluteX="140dp"
-        tools:layout_editor_absoluteY="87dp" />
+        android:layout_width="142dp"
+        android:layout_height="116dp"
+        tools:layout_editor_absoluteX="553dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <VideoView
+        android:id="@+id/videoView8"
+        android:layout_width="505dp"
+        android:layout_height="308dp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="54dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
